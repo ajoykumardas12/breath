@@ -55,7 +55,6 @@ body{
     border-radius: 50%;
     background: #413F42;
     animation: rotate 8s infinite linear;
-    /* transform-origin: center; */
 }
 
 .pointer{
@@ -68,8 +67,25 @@ body{
     z-index: 1;
 }
 
-@keyframes rotate {
-    50% {transform: rotate(180deg);}
+.grow{
+    animation: grow 3.2s;
+}
+.shrink{
+    animation: shrink 3.2s;
+}
 
-    100% {transform: rotate(360deg);}
+@keyframes grow {
+    from{transform: scale(0.9);}
+    to{transform: scale(1);}
+}
+
+@keyframes shrink {
+    from{transform: scale(1);}
+    to{transform: scale(0.9);}
+}
+
+@keyframes rotate {
+    from{transform: rotate(0deg);}
+
+    to{transform: rotate(360deg);}
 }
