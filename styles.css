@@ -39,7 +39,7 @@ body{
 }
 
 .outer-circle{
-    background-image: conic-gradient(#3977a0 0deg, #205375 150deg, #d7e6f0 140deg, #afcde0 220deg, #316080 210deg, #224a64 360deg);
+    background-image: conic-gradient(#3977a0 0deg, #205375 144deg, #d7e6f0 144deg, #afcde0 216deg, #316080 216deg, #224a64 360deg);
     height: 320px;
     width: 320px;
     top: -10px;
