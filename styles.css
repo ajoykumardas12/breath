@@ -15,12 +15,16 @@ body{
     align-items: center;
 }
 
+h1{
+    font-size: 2.5rem;
+}
+
 .container{
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 300px;
-    width: 300px;
+    height: 19rem;
+    width: 19rem;
     margin: auto;
     position: relative;
 }
@@ -40,17 +44,17 @@ body{
 
 .outer-circle{
     background-image: conic-gradient(#3977a0 0deg, #205375 144deg, #d7e6f0 144deg, #afcde0 216deg, #316080 216deg, #224a64 360deg);
-    height: 320px;
-    width: 320px;
-    top: -10px;
-    left: -10px;
+    height: 20rem;
+    width: 20rem;
+    top: -0.5rem;
+    left: -0.5rem;
     border-radius: 50%;
     position: absolute;
     z-index: -2;
 }
 
 .pointer-container{
-    height: 370px;
+    height: 24rem;
     position: absolute;
     border-radius: 50%;
     background: #413F42;
@@ -58,9 +62,9 @@ body{
 }
 
 .pointer{
-    height: 20px;
-    width: 20px;
-    left: -10px;
+    height: 1.25rem;
+    width: 1.25rem;
+    left: -0.625rem;
     border-radius: 50%;
     background: #afcde0;
     position: absolute;
@@ -88,4 +92,35 @@ body{
     from{transform: rotate(0deg);}
 
     to{transform: rotate(360deg);}
+}
+
+@media only screen and (min-width: 1400px) {
+    html{
+        font-size: 20px;
+    }
+}
+@media only screen and (max-width: 768px) {
+    html{
+        font-size: 15px;
+    }
+}
+@media only screen and (max-width: 576px) {
+    html{
+        font-size: 14px;
+    }
+}
+@media only screen and (max-width: 348px) {
+    html{
+        font-size: 13px;
+    }
+}
+@media only screen and (max-width: 320px) {
+    html{
+        font-size: 11px;
+    }
+}
+@media (orientation: landscape){
+    body{
+        overflow: visible;
+    }
 }
