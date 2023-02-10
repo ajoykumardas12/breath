@@ -119,7 +119,9 @@ h1{
         font-size: 11px;
     }
 }
-@media (orientation: landscape){
+@media 
+only screen and (max-width: 576px)
+            and (orientation: landscape){
     body{
         overflow: visible;
     }
