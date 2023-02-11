@@ -4,6 +4,10 @@
     box-sizing: border-box;
 }
 
+:root{
+    --grow-shrink-time: 3.2s;
+}
+
 body{
     background: #413F42 url(./assets/images/peter-f-fibrknjbpUo-unsplash.jpg) no-repeat center center/cover;
     min-height: 100vh;
@@ -58,7 +62,7 @@ h1{
     position: absolute;
     border-radius: 50%;
     background: #413F42;
-    animation: rotate 8s infinite linear;
+    /* animation: rotate 8s infinite linear; */
 }
 
 .pointer{
@@ -72,10 +76,10 @@ h1{
 }
 
 .grow{
-    animation: grow 3.2s;
+    animation: grow var(--grow-shrink-time);
 }
 .shrink{
-    animation: shrink 3.2s;
+    animation: shrink var(--grow-shrink-time);
 }
 
 @keyframes grow {
