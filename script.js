@@ -1,14 +1,19 @@
 const breathInstruction = document.querySelector("#instructions");
 const container = document.querySelector(".container");
 const pointerContainer = document.querySelector(".pointer-container");
+const totalBreathTimeElement = document.querySelector('#total-breath-time');
 
-const breathTime = 8000;
+let breathTime = (Number(localStorage.getItem("breathTime")) || 8000);
 
-const breatheInTime = breathTime * 0.4;
-const holdTime = breathTime * 0.2;
-const breatheOutTime = breathTime * 0.4;
+let breatheInTime = breathTime * 0.4;
+let holdTime = breathTime * 0.2;
+let breatheOutTime = breathTime * 0.4;
 
-document.documentElement.style.setProperty('--grow-shrink-time', breatheInTime/1000 + "s");
+let updatedTime = breathTime;
+
+
+totalBreathTimeElement.innerText = breathTime/1000 + "s";
+document.documentElement.style.setProperty('--grow-shrink-time', breatheInTime / 1000 + "s");
 
 pointerContainer.style.animation = `rotate ${breathTime / 1000
     }s infinite linear`;
@@ -30,4 +35,25 @@ function breathInstructionsUpdate() {
     container.classList.add('grow');
 }
 
-window.setInterval(breathInstructionsUpdate, breathTime);
+let interval = window.setInterval(breathInstructionsUpdate, breathTime);
+
+function increaseTime() {
+    updatedTime += 500;
+    totalBreathTimeElement.innerText = updatedTime/1000 + "s";
+}
+function decreaseTime() {
+    updatedTime -= 500;
+    totalBreathTimeElement.innerText = updatedTime/1000 + "s";
+}
+
+function updateTime(){
+    localStorage.setItem('breathTime', updatedTime);
+
+    window.location.reload();
+}
+
+function resetTime(){
+    localStorage.setItem('breathTime', 8000);
+
+    window.location.reload();
+}
